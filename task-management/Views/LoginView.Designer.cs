@@ -95,7 +95,7 @@
             this.passwordTextBox.Depth = 0;
             this.passwordTextBox.ErrorMessage = "Wrong password";
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.passwordTextBox.HideSelection = true;
+            this.passwordTextBox.HideSelection = false;
             this.passwordTextBox.Hint = "Password";
             this.passwordTextBox.LeadingIcon = null;
             this.passwordTextBox.LeaveOnEnterKey = true;
@@ -103,7 +103,7 @@
             this.passwordTextBox.MaxLength = 32767;
             this.passwordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '●';
+            this.passwordTextBox.PasswordChar = '⚫';
             this.passwordTextBox.PrefixSuffixText = null;
             this.passwordTextBox.ReadOnly = false;
             this.passwordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -116,7 +116,7 @@
             this.passwordTextBox.TabStop = false;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.passwordTextBox.TrailingIcon = global::task_management.Properties.Resources.password;
-            this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.UseSystemPasswordChar = false;
             // 
             // usernameTextBox
             // 

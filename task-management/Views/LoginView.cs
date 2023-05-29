@@ -46,6 +46,23 @@ namespace task_management.Views
             set { passwordTextBox.Text = value; }
         }
 
+        public bool HideShow 
+        {
+            get { return hideShowPasswordCheckbox.Checked; }
+            set { hideShowPasswordCheckbox.Checked = value; }
+        }
+
+        public MaterialTextBox2 PasswordTextBox
+        {
+            get { return passwordTextBox; }
+            set { passwordTextBox = value; }
+        }
+
+        public MaterialForm Form 
+        {
+            get { return this; }
+        }
+
 
         // methods
         private void InitMaterialSkinManager()

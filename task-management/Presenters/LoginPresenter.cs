@@ -34,7 +34,17 @@ namespace task_management.Presenters
         // methods
         private void Register(object sender, EventArgs e)
         {
-            
+            ILoginRepository loginRepository = new LoginRepository(connectionString);
+            bool? result = loginRepository.Register(this.view.Username, this.view.Password);
+
+            if (result == true)
+            {
+                MessageBox.Show("Register successful!");
+            }
+            else
+            {
+                MessageBox.Show("Register failed!");
+            }
         }
 
         private void Login(object sender, EventArgs e)
@@ -54,7 +64,14 @@ namespace task_management.Presenters
 
         private void HideShowPassword(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (this.view.HideShow)
+            {
+                this.view.PasswordTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                this.view.PasswordTextBox.PasswordChar = '⚫';
+            }
         }
 
     }

@@ -57,7 +57,7 @@ namespace task_management._Repositories
             {
                 connection.Open();
 
-                var query = @"INSERT INTO user (UserName, Password
+                var query = @"INSERT INTO user (UserName, Password)
                             VALUES (@username, @password)";
 
                 var command = new MySqlCommand(query, connection);
