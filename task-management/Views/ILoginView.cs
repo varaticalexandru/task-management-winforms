@@ -8,6 +8,10 @@ namespace task_management.Views
 {
     public interface ILoginView
     {
+        // properties
+        String Username { get; set; }
+        String Password { get; set; }
+
         // properties (events)
         event EventHandler Login;
         event EventHandler Register;

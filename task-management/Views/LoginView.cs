@@ -18,6 +18,7 @@ namespace task_management.Views
         MaterialSkin.MaterialSkinManager materialSkinManager;
 
 
+
         // constructor
         public LoginView()
         {
@@ -32,6 +33,18 @@ namespace task_management.Views
         public event EventHandler Login;
         public event EventHandler Register;
         public event EventHandler HideShowPassword;
+
+        public string Username 
+        { 
+            get { return usernameTextBox.Text; }
+            set { usernameTextBox.Text = value; }
+        }
+
+        public string Password 
+        {
+            get { return passwordTextBox.Text; }
+            set { passwordTextBox.Text = value; }
+        }
 
 
         // methods
@@ -54,8 +67,10 @@ namespace task_management.Views
         
         private void AssociateAndRaiseViewEvents()
         {
-            /*loginButton.Click += delegate { Login?.Invoke(this, EventArgs.Empty); };
-            registerButton.Click += delegate { Register?.Invoke(this, EventArgs.Empty); };*/
+            // associate events with event handlers
+            loginButton.Click += delegate { Login?.Invoke(this, EventArgs.Empty); };
+            registerButton.Click += delegate { Register?.Invoke(this, EventArgs.Empty); };
+            hideShowPasswordCheckbox.CheckedChanged += delegate { HideShowPassword?.Invoke(this, EventArgs.Empty); };
         }
 
         private void LoginView_Load(object sender, EventArgs e)

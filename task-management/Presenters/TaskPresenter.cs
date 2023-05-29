@@ -21,7 +21,6 @@ namespace task_management.Presenters
         public TaskPresenter(ITaskView view, ITaskRepository repository)
         {
 
-
             this.view = view;
             this.repository = repository;
             this.taskBindingSource = new BindingSource();

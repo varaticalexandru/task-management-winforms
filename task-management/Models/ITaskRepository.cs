@@ -8,6 +8,7 @@ namespace task_management.Models
 {
     public interface ITaskRepository
     {
+        // methods
         void Add(Task item);
         bool Edit(Task item);
         void Delete(int id);

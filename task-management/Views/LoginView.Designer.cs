@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
-            this.showHidePasswordCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
+            this.hideShowPasswordCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
             this.loginButton = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passwordTextBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -40,21 +40,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // showHidePasswordCheckbox
+            // hideShowPasswordCheckbox
             // 
-            this.showHidePasswordCheckbox.AutoSize = true;
-            this.showHidePasswordCheckbox.Depth = 0;
-            this.showHidePasswordCheckbox.Location = new System.Drawing.Point(536, 345);
-            this.showHidePasswordCheckbox.Margin = new System.Windows.Forms.Padding(0);
-            this.showHidePasswordCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.showHidePasswordCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.showHidePasswordCheckbox.Name = "showHidePasswordCheckbox";
-            this.showHidePasswordCheckbox.ReadOnly = false;
-            this.showHidePasswordCheckbox.Ripple = true;
-            this.showHidePasswordCheckbox.Size = new System.Drawing.Size(196, 37);
-            this.showHidePasswordCheckbox.TabIndex = 2;
-            this.showHidePasswordCheckbox.Text = "Show / Hide Password";
-            this.showHidePasswordCheckbox.UseVisualStyleBackColor = true;
+            this.hideShowPasswordCheckbox.AutoSize = true;
+            this.hideShowPasswordCheckbox.Depth = 0;
+            this.hideShowPasswordCheckbox.Location = new System.Drawing.Point(536, 345);
+            this.hideShowPasswordCheckbox.Margin = new System.Windows.Forms.Padding(0);
+            this.hideShowPasswordCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.hideShowPasswordCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.hideShowPasswordCheckbox.Name = "hideShowPasswordCheckbox";
+            this.hideShowPasswordCheckbox.ReadOnly = false;
+            this.hideShowPasswordCheckbox.Ripple = true;
+            this.hideShowPasswordCheckbox.Size = new System.Drawing.Size(196, 37);
+            this.hideShowPasswordCheckbox.TabIndex = 2;
+            this.hideShowPasswordCheckbox.Text = "Show / Hide Password";
+            this.hideShowPasswordCheckbox.UseVisualStyleBackColor = true;
             // 
             // loginButton
             // 
@@ -204,12 +204,12 @@
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.showHidePasswordCheckbox);
+            this.Controls.Add(this.hideShowPasswordCheckbox);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Name = "LoginView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Authentification";
+            this.Text = "Task Management | Authentification";
             this.Load += new System.EventHandler(this.LoginView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -221,7 +221,7 @@
 
         private MaterialSkin.Controls.MaterialTextBox2 usernameTextBox;
         private MaterialSkin.Controls.MaterialTextBox2 passwordTextBox;
-        private MaterialSkin.Controls.MaterialCheckbox showHidePasswordCheckbox;
+        private MaterialSkin.Controls.MaterialCheckbox hideShowPasswordCheckbox;
         private MaterialSkin.Controls.MaterialButton loginButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;

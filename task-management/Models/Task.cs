@@ -26,7 +26,7 @@ namespace task_management.Models
 
         [DisplayName("Task Name")]
         [Required(ErrorMessage = "Task Name is required !")]
-        [StringLength(50, MinimumLength =3, ErrorMessage = "Task Name must be between 3 and 45 characters !")]
+        [StringLength(45, MinimumLength =3, ErrorMessage = "Task Name must be between 3 and 45 characters !")]
         public String Name { get; set; }
 
         [DisplayName("Task Description")]

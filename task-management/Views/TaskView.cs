@@ -136,7 +136,7 @@ namespace task_management.Views
 
 
         // Singleton pattern (only one instance of this view/form is allowed)
-        private static TaskView instance = null;
+        private static TaskView instance = null;    // singleton instance
         public static TaskView GetInstance()
         {
             if (instance == null || instance.IsDisposed)
