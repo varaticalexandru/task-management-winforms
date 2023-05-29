@@ -35,3 +35,6 @@ C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Num
 C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\varat\GIT\task-management-winforms\task-management\obj\Debug\task-management.csproj.CopyComplete
+C:\Users\varat\GIT\task-management-winforms\task-management\obj\Debug\task_management.Views.MainView.resources
+C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\MaterialSkin.dll
+C:\Users\varat\GIT\task-management-winforms\task-management\obj\Debug\task_management.Views.LoginView.resources

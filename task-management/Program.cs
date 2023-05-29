@@ -23,14 +23,12 @@ namespace task_management
             Application.SetCompatibleTextRenderingDefault(false);
 
             String connectionString = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
-            // log connection string
-            Console.WriteLine(connectionString);
 
-            ITaskView taskView = new TaskView();
-            ITaskRepository taskRepository = new TaskRepository(connectionString);
-            new TaskPresenter(taskView, taskRepository);
+            IMainView mainView = new MainView();
+            new MainPresenter(mainView, connectionString);
 
-            Application.Run((Form) taskView);
+            /*Application.Run((Form) mainView);*/
+            Application.Run(new LoginView());
         }
     }
 }

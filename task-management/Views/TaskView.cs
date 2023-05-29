@@ -94,7 +94,7 @@ namespace task_management.Views
             set { this.message = value; }
         }
 
-        // events
+        // events (properties)
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
@@ -134,5 +134,24 @@ namespace task_management.Views
             // TODO: ADD, EDIT, DELETE
         }
 
+
+        // Singleton pattern (only one instance of this view/form is allowed)
+        private static TaskView instance = null;
+        public static TaskView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new TaskView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+
+                instance.BringToFront();
+            }
+
+            return instance;
+        }
     }
 }

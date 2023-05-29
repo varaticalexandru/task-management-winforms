@@ -29,7 +29,7 @@ namespace task_management.Presenters
             this.taskList = repository.GetAll();
             this.taskBindingSource.DataSource = taskList;  // set data source
 
-            // subscribe event handler methods to view events
+            // associate view events with presenter methods
             this.view.SearchEvent += SearchTask;
             this.view.AddNewEvent += AddNewTask;
             this.view.EditEvent += EditTask;
