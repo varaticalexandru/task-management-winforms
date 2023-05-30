@@ -11,13 +11,13 @@ namespace task_management.Views
     {
         // Tasks
         // properties
-        int Id { get; set; }
+        String Id { get; set; }
         String Name { get; set; }
         String Description { get; set; }
-        DateTime DueDate { get; set; }
+        String DueDate { get; set; }
         String Priority { get; set; }
         String Status { get; set; }
-        int ProjectId { get; set; }
+        String ProjectId { get; set; }
 
         String SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -35,5 +35,29 @@ namespace task_management.Views
         // methods
         void SetTaskListBindingSource(BindingSource taskList);
         void Show();
+
+
+
+        // Projects
+        // properties
+        String ProjectID { get; set; }
+        String ProjectName { get; set; }
+        String ProjectDescription { get; set; }
+        String StartDate { get; set; }
+        String EndDate { get; set; }
+
+        String SearchProjectValue { get; set; }
+
+        // events
+        event EventHandler SearchProjectEvent;
+        event EventHandler AddNewProjectEvent;
+        event EventHandler EditProjectEvent;
+        event EventHandler DeleteProjectEvent;
+        event EventHandler SaveProjectEvent;
+        event EventHandler CancelProjectEvent;
+
+        // methods
+        void SetProjectListBindingSource(BindingSource projectList);
+
     }
 }

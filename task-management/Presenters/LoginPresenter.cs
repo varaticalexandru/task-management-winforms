@@ -34,6 +34,7 @@ namespace task_management.Presenters
 
 
         // methods
+
         private void Register(object sender, EventArgs e)
         {
             // validate username and password
@@ -62,10 +63,8 @@ namespace task_management.Presenters
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                /*IMainView mainView = new MainView();
-                new MainPresenter(mainView, connectionString);*/
 
-                IMainView mainView = new MainView();
+                IMainView mainView = MainView.GetInstance();
                 IMainRepository mainRepository = new MainRepository(connectionString);
                 new MainPresenter(mainView, mainRepository);
 

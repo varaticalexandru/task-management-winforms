@@ -242,8 +242,10 @@
     <Compile Include="Models\ILoginRepository.cs" />
     <Compile Include="Models\IMainRepository.cs" />
     <Compile Include="Models\ITaskRepository.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Presenters\Common\TaskValidation.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter_.cs" />
@@ -327,6 +329,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\username.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('packages\Fody.4.0.2\build\Fody.targets')" />

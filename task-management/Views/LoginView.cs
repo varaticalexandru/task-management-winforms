@@ -103,5 +103,24 @@ namespace task_management.Views
         {
 
         }
+
+        // Singleton pattern (only one instance of this view/form is allowed)
+        private static LoginView instance = null;    // singleton instance
+        public static LoginView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new LoginView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+
+                instance.BringToFront();
+            }
+
+            return instance;
+        }
     }
 }
