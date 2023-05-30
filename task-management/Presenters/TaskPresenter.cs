@@ -46,6 +46,7 @@ namespace task_management.Presenters
             this.view.Show();
         }
 
+        // methods
         private void LoadTaskList()
         {
             

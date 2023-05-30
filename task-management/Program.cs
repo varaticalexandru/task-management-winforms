@@ -24,11 +24,6 @@ namespace task_management
 
             String connectionString = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
 
-            /*IMainView mainView = new MainView();
-            new MainPresenter(mainView, connectionString);*/
-
-            /*Application.Run((Form) mainView);*/
-
             ILoginView loginView = new LoginView();
             new LoginPresenter(loginView, connectionString);
 

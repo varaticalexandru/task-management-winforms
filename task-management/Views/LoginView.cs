@@ -85,7 +85,7 @@ namespace task_management.Views
             // Set the color scheme for the form
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Blue800, Primary.Blue900,
-                Primary.Blue500, Accent.LightBlue200,
+                Primary.Blue500, Accent.LightBlue700,
                 TextShade.WHITE
             );
 

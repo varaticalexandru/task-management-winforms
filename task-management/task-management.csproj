@@ -240,16 +240,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ILoginRepository.cs" />
+    <Compile Include="Models\IMainRepository.cs" />
     <Compile Include="Models\ITaskRepository.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter_.cs" />
     <Compile Include="Presenters\TaskPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\IMainView_.cs" />
     <Compile Include="Views\ITaskView.cs" />
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
@@ -257,17 +260,15 @@
     <Compile Include="Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainMView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\MainMView.Designer.cs">
-      <DependentUpon>MainMView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView_.cs" />
+    <Compile Include="Views\MainView_.Designer.cs">
+      <DependentUpon>MainView_.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TaskView.cs">
       <SubType>Form</SubType>
@@ -277,6 +278,7 @@
     </Compile>
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\LoginRepository.cs" />
+    <Compile Include="_Repositories\MainRepository.cs" />
     <Compile Include="_Repositories\TaskRepository.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -291,11 +293,11 @@
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainMView.resx">
-      <DependentUpon>MainMView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView_.resx">
+      <DependentUpon>MainView_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TaskView.resx">
       <DependentUpon>TaskView.cs</DependentUpon>

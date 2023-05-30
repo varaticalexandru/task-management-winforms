@@ -65,7 +65,9 @@ namespace task_management.Presenters
                 /*IMainView mainView = new MainView();
                 new MainPresenter(mainView, connectionString);*/
 
-                MaterialForm mainView = new MainMView();
+                IMainView mainView = new MainView();
+                IMainRepository mainRepository = new MainRepository(connectionString);
+                new MainPresenter(mainView, mainRepository);
 
                 ((Form)mainView).Show();
                 ((Form)this.view).Hide();
