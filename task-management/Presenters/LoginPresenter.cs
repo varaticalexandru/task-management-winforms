@@ -8,6 +8,7 @@ using task_management.Views;
 using task_management._Repositories;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using MaterialSkin.Controls;
 
 namespace task_management.Presenters
 {
@@ -61,8 +62,10 @@ namespace task_management.Presenters
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                IMainView mainView = new MainView();
-                new MainPresenter(mainView, connectionString);
+                /*IMainView mainView = new MainView();
+                new MainPresenter(mainView, connectionString);*/
+
+                MaterialForm mainView = new MainMView();
 
                 ((Form)mainView).Show();
                 ((Form)this.view).Hide();

@@ -15,8 +15,12 @@ namespace task_management.Views
     public partial class LoginView : MaterialForm, ILoginView
     {
         // fields
-        MaterialSkin.MaterialSkinManager materialSkinManager;
+        private static MaterialSkinManager materialSkinManager;
 
+        public static MaterialSkinManager getMaterialSkinManager ()
+        {
+            return materialSkinManager;
+        }
 
 
         // constructor
@@ -61,6 +65,11 @@ namespace task_management.Views
         public MaterialForm Form 
         {
             get { return this; }
+        }
+
+        public MaterialSkinManager MaterialSkinManager
+        {
+            get { return materialSkinManager; }
         }
 
 

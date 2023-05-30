@@ -52,3 +52,4 @@ C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Ser
 C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Text.Encoding.CodePages.xml
 C:\Users\varat\GIT\task-management-winforms\task-management\bin\Debug\System.Threading.AccessControl.xml
 C:\Users\varat\GIT\task-management-winforms\task-management\obj\Debug\task-management.csproj.Fody.CopyLocal.cache
+C:\Users\varat\GIT\task-management-winforms\task-management\obj\Debug\task_management.Views.MainMView.resources
