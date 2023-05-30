@@ -15,6 +15,7 @@ using task_management._Repositories;
 using MaterialSkin;
 using System.Globalization;
 using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace task_management.Views
 {
@@ -26,6 +27,8 @@ namespace task_management.Views
         private String message;
         private bool isSuccessful;
         private bool isEdit;
+
+        private static int currentUserID;
 
 
         // constructor
@@ -204,7 +207,7 @@ namespace task_management.Views
         // methods
         private void MainView_Load(object sender, EventArgs e)
         {
-
+            setUserData();  // set user data
         }
 
 
@@ -348,6 +351,17 @@ namespace task_management.Views
         }
 
         // methods
+
+        public static void setCurrentUserID(int id)
+        {
+            currentUserID = id;
+        }
+
+        public static int getCurrentUserID()
+        {
+            return currentUserID;
+        }
+
         private void InitMaterialSkinManager()
         {
 
@@ -410,5 +424,45 @@ namespace task_management.Views
         {
             Application.Exit();
         }
+
+        //
+        private void setUserData()
+        {
+            userIDMaterialTextBox.Text = currentUserID.ToString();  // set user ID
+
+            using (var connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString))
+            {
+            
+                connection.Open();
+
+                var getUserDataQuery = @"SELECT * FROM user
+                                    WHERE UserID = @userID";
+
+                var userCommand = new MySqlCommand(getUserDataQuery, connection);
+
+                userCommand.Parameters.Add("@userID", MySqlDbType.Int32).Value = currentUserID;
+
+                using (var userReader = userCommand.ExecuteReader())
+                {
+                    while (userReader.Read())
+                    {
+                        int userID = userReader.IsDBNull(userReader.GetOrdinal("UserID")) ? -1 : userReader.GetInt32("UserID");
+                        String userName = userReader.IsDBNull(userReader.GetOrdinal("UserName")) ? "" : userReader.GetString("UserName");
+                        String Email = userReader.IsDBNull(userReader.GetOrdinal("Email")) ? "" : userReader.GetString("Email");
+                        String role = userReader.IsDBNull(userReader.GetOrdinal("Role")) ? "" : userReader.GetString("Role");
+
+                        // set other user data
+                        usernameMaterialTextBox.Text = userName;
+                        emailMaterialTextBox.Text = Email;
+                        roleMaterialTextBox.Text = role;
+
+                        break;
+                    }
+                }
+
+            }
+        }
+
+        
     }
 }

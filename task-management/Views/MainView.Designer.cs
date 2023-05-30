@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tasksTabPage = new System.Windows.Forms.TabPage();
@@ -92,6 +92,17 @@
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.darkThemeMaterialSwitch = new MaterialSkin.Controls.MaterialSwitch();
+            this.profileTabPage = new System.Windows.Forms.TabPage();
+            this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.userIDMaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.userIDMaterialLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.usernameMaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.emailMaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.roleMaterialTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.EmailMaterialLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.RoleMaterialLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.UsernameMaterialLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logoutTabPage = new System.Windows.Forms.TabPage();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.logoutMaterialButton = new MaterialSkin.Controls.MaterialButton();
@@ -99,7 +110,6 @@
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.exitMaterialButton = new MaterialSkin.Controls.MaterialButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.userTabPage = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tasksTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskDataGridView)).BeginInit();
@@ -109,6 +119,9 @@
             this.addProjectTabPage.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.profileTabPage.SuspendLayout();
+            this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.logoutTabPage.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.exitTabPage.SuspendLayout();
@@ -128,7 +141,7 @@
             this.materialTabControl1.Controls.Add(this.usersTabPage);
             this.materialTabControl1.Controls.Add(this.addUserTabPage);
             this.materialTabControl1.Controls.Add(this.settingsTabPage);
-            this.materialTabControl1.Controls.Add(this.userTabPage);
+            this.materialTabControl1.Controls.Add(this.profileTabPage);
             this.materialTabControl1.Controls.Add(this.logoutTabPage);
             this.materialTabControl1.Controls.Add(this.exitTabPage);
             this.materialTabControl1.Depth = 0;
@@ -287,35 +300,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.taskDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.taskDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.taskDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.taskDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.taskDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.taskDataGridView.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.taskDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.taskDataGridView.EnableHeadersVisualStyles = false;
             this.taskDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
             this.taskDataGridView.Location = new System.Drawing.Point(22, 145);
             this.taskDataGridView.Name = "taskDataGridView";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.taskDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.taskDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.taskDataGridView.Size = new System.Drawing.Size(883, 510);
             this.taskDataGridView.TabIndex = 10;
             // 
@@ -791,36 +804,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.projectDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.projectDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.projectDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.projectDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.projectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.projectDataGridView.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.projectDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.projectDataGridView.EnableHeadersVisualStyles = false;
             this.projectDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
             this.projectDataGridView.Location = new System.Drawing.Point(22, 145);
             this.projectDataGridView.Name = "projectDataGridView";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.projectDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
-            this.projectDataGridView.Size = new System.Drawing.Size(883, 580);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.projectDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.projectDataGridView.Size = new System.Drawing.Size(883, 650);
             this.projectDataGridView.TabIndex = 21;
             // 
             // addProjectTabPage
@@ -838,9 +851,9 @@
             this.addProjectTabPage.Controls.Add(this.projectIDLabel);
             this.addProjectTabPage.Controls.Add(this.projectIDTextBox);
             this.addProjectTabPage.ImageKey = "add_project.png";
-            this.addProjectTabPage.Location = new System.Drawing.Point(4, 39);
+            this.addProjectTabPage.Location = new System.Drawing.Point(4, 74);
             this.addProjectTabPage.Name = "addProjectTabPage";
-            this.addProjectTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.addProjectTabPage.Size = new System.Drawing.Size(1186, 655);
             this.addProjectTabPage.TabIndex = 9;
             this.addProjectTabPage.Text = "Add Project";
             this.addProjectTabPage.UseVisualStyleBackColor = true;
@@ -1050,9 +1063,9 @@
             // taskAssignmentsTabPage
             // 
             this.taskAssignmentsTabPage.ImageKey = "task_assignments.png";
-            this.taskAssignmentsTabPage.Location = new System.Drawing.Point(4, 39);
+            this.taskAssignmentsTabPage.Location = new System.Drawing.Point(4, 74);
             this.taskAssignmentsTabPage.Name = "taskAssignmentsTabPage";
-            this.taskAssignmentsTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.taskAssignmentsTabPage.Size = new System.Drawing.Size(1186, 655);
             this.taskAssignmentsTabPage.TabIndex = 2;
             this.taskAssignmentsTabPage.Text = "Task Assignments";
             this.taskAssignmentsTabPage.UseVisualStyleBackColor = true;
@@ -1060,9 +1073,9 @@
             // addTaskAssignmentTabPage
             // 
             this.addTaskAssignmentTabPage.ImageKey = "add_task_assignment.png";
-            this.addTaskAssignmentTabPage.Location = new System.Drawing.Point(4, 39);
+            this.addTaskAssignmentTabPage.Location = new System.Drawing.Point(4, 74);
             this.addTaskAssignmentTabPage.Name = "addTaskAssignmentTabPage";
-            this.addTaskAssignmentTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.addTaskAssignmentTabPage.Size = new System.Drawing.Size(1186, 655);
             this.addTaskAssignmentTabPage.TabIndex = 10;
             this.addTaskAssignmentTabPage.Text = "Add Task Assignment";
             this.addTaskAssignmentTabPage.UseVisualStyleBackColor = true;
@@ -1070,9 +1083,9 @@
             // commentsTabPage
             // 
             this.commentsTabPage.ImageKey = "comments.png";
-            this.commentsTabPage.Location = new System.Drawing.Point(4, 39);
+            this.commentsTabPage.Location = new System.Drawing.Point(4, 74);
             this.commentsTabPage.Name = "commentsTabPage";
-            this.commentsTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.commentsTabPage.Size = new System.Drawing.Size(1186, 655);
             this.commentsTabPage.TabIndex = 3;
             this.commentsTabPage.Text = "Comments";
             this.commentsTabPage.UseVisualStyleBackColor = true;
@@ -1080,9 +1093,9 @@
             // addCommentTabPage
             // 
             this.addCommentTabPage.ImageKey = "add_comment.png";
-            this.addCommentTabPage.Location = new System.Drawing.Point(4, 39);
+            this.addCommentTabPage.Location = new System.Drawing.Point(4, 74);
             this.addCommentTabPage.Name = "addCommentTabPage";
-            this.addCommentTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.addCommentTabPage.Size = new System.Drawing.Size(1186, 655);
             this.addCommentTabPage.TabIndex = 11;
             this.addCommentTabPage.Text = "Add Comment";
             this.addCommentTabPage.UseVisualStyleBackColor = true;
@@ -1090,9 +1103,9 @@
             // usersTabPage
             // 
             this.usersTabPage.ImageKey = "users.png";
-            this.usersTabPage.Location = new System.Drawing.Point(4, 39);
+            this.usersTabPage.Location = new System.Drawing.Point(4, 74);
             this.usersTabPage.Name = "usersTabPage";
-            this.usersTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.usersTabPage.Size = new System.Drawing.Size(1186, 655);
             this.usersTabPage.TabIndex = 4;
             this.usersTabPage.Text = "Users";
             this.usersTabPage.UseVisualStyleBackColor = true;
@@ -1100,9 +1113,9 @@
             // addUserTabPage
             // 
             this.addUserTabPage.ImageKey = "add_user.png";
-            this.addUserTabPage.Location = new System.Drawing.Point(4, 39);
+            this.addUserTabPage.Location = new System.Drawing.Point(4, 74);
             this.addUserTabPage.Name = "addUserTabPage";
-            this.addUserTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.addUserTabPage.Size = new System.Drawing.Size(1186, 655);
             this.addUserTabPage.TabIndex = 12;
             this.addUserTabPage.Text = "Add User";
             this.addUserTabPage.UseVisualStyleBackColor = true;
@@ -1111,9 +1124,9 @@
             // 
             this.settingsTabPage.Controls.Add(this.materialCard1);
             this.settingsTabPage.ImageKey = "settings.png";
-            this.settingsTabPage.Location = new System.Drawing.Point(4, 39);
+            this.settingsTabPage.Location = new System.Drawing.Point(4, 74);
             this.settingsTabPage.Name = "settingsTabPage";
-            this.settingsTabPage.Size = new System.Drawing.Size(1186, 690);
+            this.settingsTabPage.Size = new System.Drawing.Size(1186, 655);
             this.settingsTabPage.TabIndex = 5;
             this.settingsTabPage.Text = "Settings";
             this.settingsTabPage.UseVisualStyleBackColor = true;
@@ -1149,6 +1162,209 @@
             this.darkThemeMaterialSwitch.Text = "Dark Theme";
             this.darkThemeMaterialSwitch.UseVisualStyleBackColor = true;
             this.darkThemeMaterialSwitch.CheckedChanged += new System.EventHandler(this.darkThemeMaterialSwitch_CheckedChanged);
+            // 
+            // profileTabPage
+            // 
+            this.profileTabPage.Controls.Add(this.materialCard4);
+            this.profileTabPage.Controls.Add(this.pictureBox1);
+            this.profileTabPage.ImageKey = "user.png";
+            this.profileTabPage.Location = new System.Drawing.Point(4, 74);
+            this.profileTabPage.Name = "profileTabPage";
+            this.profileTabPage.Size = new System.Drawing.Size(1186, 655);
+            this.profileTabPage.TabIndex = 13;
+            this.profileTabPage.Text = "Profile";
+            this.profileTabPage.UseVisualStyleBackColor = true;
+            // 
+            // materialCard4
+            // 
+            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.userIDMaterialTextBox);
+            this.materialCard4.Controls.Add(this.userIDMaterialLabel);
+            this.materialCard4.Controls.Add(this.usernameMaterialTextBox);
+            this.materialCard4.Controls.Add(this.emailMaterialTextBox);
+            this.materialCard4.Controls.Add(this.roleMaterialTextBox);
+            this.materialCard4.Controls.Add(this.EmailMaterialLabel);
+            this.materialCard4.Controls.Add(this.RoleMaterialLabel);
+            this.materialCard4.Controls.Add(this.UsernameMaterialLabel);
+            this.materialCard4.Depth = 0;
+            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard4.Location = new System.Drawing.Point(302, 333);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard4.Name = "materialCard4";
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard4.Size = new System.Drawing.Size(580, 266);
+            this.materialCard4.TabIndex = 1;
+            // 
+            // userIDMaterialTextBox
+            // 
+            this.userIDMaterialTextBox.AnimateReadOnly = false;
+            this.userIDMaterialTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.userIDMaterialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.userIDMaterialTextBox.Depth = 0;
+            this.userIDMaterialTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.userIDMaterialTextBox.HideSelection = true;
+            this.userIDMaterialTextBox.LeadingIcon = null;
+            this.userIDMaterialTextBox.Location = new System.Drawing.Point(184, 22);
+            this.userIDMaterialTextBox.MaxLength = 32767;
+            this.userIDMaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.userIDMaterialTextBox.Name = "userIDMaterialTextBox";
+            this.userIDMaterialTextBox.PasswordChar = '\0';
+            this.userIDMaterialTextBox.PrefixSuffixText = null;
+            this.userIDMaterialTextBox.ReadOnly = false;
+            this.userIDMaterialTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userIDMaterialTextBox.SelectedText = "";
+            this.userIDMaterialTextBox.SelectionLength = 0;
+            this.userIDMaterialTextBox.SelectionStart = 0;
+            this.userIDMaterialTextBox.ShortcutsEnabled = true;
+            this.userIDMaterialTextBox.Size = new System.Drawing.Size(250, 48);
+            this.userIDMaterialTextBox.TabIndex = 10;
+            this.userIDMaterialTextBox.TabStop = false;
+            this.userIDMaterialTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.userIDMaterialTextBox.TrailingIcon = null;
+            this.userIDMaterialTextBox.UseSystemPasswordChar = false;
+            // 
+            // userIDMaterialLabel
+            // 
+            this.userIDMaterialLabel.AutoSize = true;
+            this.userIDMaterialLabel.Depth = 0;
+            this.userIDMaterialLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.userIDMaterialLabel.Location = new System.Drawing.Point(37, 41);
+            this.userIDMaterialLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userIDMaterialLabel.Name = "userIDMaterialLabel";
+            this.userIDMaterialLabel.Size = new System.Drawing.Size(51, 19);
+            this.userIDMaterialLabel.TabIndex = 9;
+            this.userIDMaterialLabel.Text = "User ID";
+            // 
+            // usernameMaterialTextBox
+            // 
+            this.usernameMaterialTextBox.AnimateReadOnly = false;
+            this.usernameMaterialTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.usernameMaterialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.usernameMaterialTextBox.Depth = 0;
+            this.usernameMaterialTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.usernameMaterialTextBox.HideSelection = true;
+            this.usernameMaterialTextBox.LeadingIcon = null;
+            this.usernameMaterialTextBox.Location = new System.Drawing.Point(184, 83);
+            this.usernameMaterialTextBox.MaxLength = 32767;
+            this.usernameMaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.usernameMaterialTextBox.Name = "usernameMaterialTextBox";
+            this.usernameMaterialTextBox.PasswordChar = '\0';
+            this.usernameMaterialTextBox.PrefixSuffixText = null;
+            this.usernameMaterialTextBox.ReadOnly = false;
+            this.usernameMaterialTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.usernameMaterialTextBox.SelectedText = "";
+            this.usernameMaterialTextBox.SelectionLength = 0;
+            this.usernameMaterialTextBox.SelectionStart = 0;
+            this.usernameMaterialTextBox.ShortcutsEnabled = true;
+            this.usernameMaterialTextBox.Size = new System.Drawing.Size(250, 48);
+            this.usernameMaterialTextBox.TabIndex = 8;
+            this.usernameMaterialTextBox.TabStop = false;
+            this.usernameMaterialTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.usernameMaterialTextBox.TrailingIcon = null;
+            this.usernameMaterialTextBox.UseSystemPasswordChar = false;
+            // 
+            // emailMaterialTextBox
+            // 
+            this.emailMaterialTextBox.AnimateReadOnly = false;
+            this.emailMaterialTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.emailMaterialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.emailMaterialTextBox.Depth = 0;
+            this.emailMaterialTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.emailMaterialTextBox.HideSelection = true;
+            this.emailMaterialTextBox.LeadingIcon = null;
+            this.emailMaterialTextBox.Location = new System.Drawing.Point(184, 197);
+            this.emailMaterialTextBox.MaxLength = 32767;
+            this.emailMaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.emailMaterialTextBox.Name = "emailMaterialTextBox";
+            this.emailMaterialTextBox.PasswordChar = '\0';
+            this.emailMaterialTextBox.PrefixSuffixText = null;
+            this.emailMaterialTextBox.ReadOnly = false;
+            this.emailMaterialTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.emailMaterialTextBox.SelectedText = "";
+            this.emailMaterialTextBox.SelectionLength = 0;
+            this.emailMaterialTextBox.SelectionStart = 0;
+            this.emailMaterialTextBox.ShortcutsEnabled = true;
+            this.emailMaterialTextBox.Size = new System.Drawing.Size(250, 48);
+            this.emailMaterialTextBox.TabIndex = 7;
+            this.emailMaterialTextBox.TabStop = false;
+            this.emailMaterialTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.emailMaterialTextBox.TrailingIcon = null;
+            this.emailMaterialTextBox.UseSystemPasswordChar = false;
+            // 
+            // roleMaterialTextBox
+            // 
+            this.roleMaterialTextBox.AnimateReadOnly = false;
+            this.roleMaterialTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.roleMaterialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.roleMaterialTextBox.Depth = 0;
+            this.roleMaterialTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.roleMaterialTextBox.HideSelection = true;
+            this.roleMaterialTextBox.LeadingIcon = null;
+            this.roleMaterialTextBox.Location = new System.Drawing.Point(184, 140);
+            this.roleMaterialTextBox.MaxLength = 32767;
+            this.roleMaterialTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.roleMaterialTextBox.Name = "roleMaterialTextBox";
+            this.roleMaterialTextBox.PasswordChar = '\0';
+            this.roleMaterialTextBox.PrefixSuffixText = null;
+            this.roleMaterialTextBox.ReadOnly = false;
+            this.roleMaterialTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.roleMaterialTextBox.SelectedText = "";
+            this.roleMaterialTextBox.SelectionLength = 0;
+            this.roleMaterialTextBox.SelectionStart = 0;
+            this.roleMaterialTextBox.ShortcutsEnabled = true;
+            this.roleMaterialTextBox.Size = new System.Drawing.Size(250, 48);
+            this.roleMaterialTextBox.TabIndex = 6;
+            this.roleMaterialTextBox.TabStop = false;
+            this.roleMaterialTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.roleMaterialTextBox.TrailingIcon = null;
+            this.roleMaterialTextBox.UseSystemPasswordChar = false;
+            // 
+            // EmailMaterialLabel
+            // 
+            this.EmailMaterialLabel.AutoSize = true;
+            this.EmailMaterialLabel.Depth = 0;
+            this.EmailMaterialLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmailMaterialLabel.Location = new System.Drawing.Point(37, 209);
+            this.EmailMaterialLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EmailMaterialLabel.Name = "EmailMaterialLabel";
+            this.EmailMaterialLabel.Size = new System.Drawing.Size(41, 19);
+            this.EmailMaterialLabel.TabIndex = 2;
+            this.EmailMaterialLabel.Text = "Email";
+            // 
+            // RoleMaterialLabel
+            // 
+            this.RoleMaterialLabel.AutoSize = true;
+            this.RoleMaterialLabel.Depth = 0;
+            this.RoleMaterialLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.RoleMaterialLabel.Location = new System.Drawing.Point(37, 157);
+            this.RoleMaterialLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RoleMaterialLabel.Name = "RoleMaterialLabel";
+            this.RoleMaterialLabel.Size = new System.Drawing.Size(32, 19);
+            this.RoleMaterialLabel.TabIndex = 1;
+            this.RoleMaterialLabel.Text = "Role";
+            // 
+            // UsernameMaterialLabel
+            // 
+            this.UsernameMaterialLabel.AutoSize = true;
+            this.UsernameMaterialLabel.Depth = 0;
+            this.UsernameMaterialLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.UsernameMaterialLabel.Location = new System.Drawing.Point(37, 102);
+            this.UsernameMaterialLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UsernameMaterialLabel.Name = "UsernameMaterialLabel";
+            this.UsernameMaterialLabel.Size = new System.Drawing.Size(72, 19);
+            this.UsernameMaterialLabel.TabIndex = 0;
+            this.UsernameMaterialLabel.Text = "Username";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::task_management.Properties.Resources.profile;
+            this.pictureBox1.Location = new System.Drawing.Point(486, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 216);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // logoutTabPage
             // 
@@ -1259,16 +1475,6 @@
             this.imageList1.Images.SetKeyName(12, "user.png");
             this.imageList1.Images.SetKeyName(13, "users.png");
             // 
-            // userTabPage
-            // 
-            this.userTabPage.ImageKey = "user.png";
-            this.userTabPage.Location = new System.Drawing.Point(4, 74);
-            this.userTabPage.Name = "userTabPage";
-            this.userTabPage.Size = new System.Drawing.Size(1186, 655);
-            this.userTabPage.TabIndex = 13;
-            this.userTabPage.Text = "User";
-            this.userTabPage.UseVisualStyleBackColor = true;
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1296,6 +1502,10 @@
             this.settingsTabPage.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            this.profileTabPage.ResumeLayout(false);
+            this.materialCard4.ResumeLayout(false);
+            this.materialCard4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.logoutTabPage.ResumeLayout(false);
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
@@ -1371,6 +1581,16 @@
         private MaterialSkin.Controls.MaterialButton logoutMaterialButton;
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private MaterialSkin.Controls.MaterialButton exitMaterialButton;
-        private System.Windows.Forms.TabPage userTabPage;
+        private System.Windows.Forms.TabPage profileTabPage;
+        private MaterialSkin.Controls.MaterialCard materialCard4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialLabel EmailMaterialLabel;
+        private MaterialSkin.Controls.MaterialLabel RoleMaterialLabel;
+        private MaterialSkin.Controls.MaterialLabel UsernameMaterialLabel;
+        private MaterialSkin.Controls.MaterialTextBox2 usernameMaterialTextBox;
+        private MaterialSkin.Controls.MaterialTextBox2 emailMaterialTextBox;
+        private MaterialSkin.Controls.MaterialTextBox2 roleMaterialTextBox;
+        private MaterialSkin.Controls.MaterialTextBox2 userIDMaterialTextBox;
+        private MaterialSkin.Controls.MaterialLabel userIDMaterialLabel;
     }
 }
