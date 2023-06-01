@@ -27,6 +27,7 @@ namespace task_management
             ILoginView loginView = LoginView.GetInstance();
             new LoginPresenter(loginView, connectionString);
 
+            // run the application
             Application.Run((Form)loginView);
         }
     }

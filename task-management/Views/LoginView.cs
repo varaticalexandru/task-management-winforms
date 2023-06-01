@@ -17,10 +17,7 @@ namespace task_management.Views
         // fields
         private static MaterialSkinManager materialSkinManager;
 
-        public static MaterialSkinManager getMaterialSkinManager ()
-        {
-            return materialSkinManager;
-        }
+        
 
 
         // constructor
@@ -74,6 +71,8 @@ namespace task_management.Views
 
 
         // methods
+
+        // initialize material skin manager
         private void InitMaterialSkinManager()
         {
             
@@ -90,7 +89,14 @@ namespace task_management.Views
             );
 
         }
-        
+
+        // get skin manager
+        public static MaterialSkinManager getMaterialSkinManager()
+        {
+            return materialSkinManager;
+        }
+
+        // associate events with event handlers and raise events
         private void AssociateAndRaiseViewEvents()
         {
             // associate events with event handlers
@@ -99,10 +105,13 @@ namespace task_management.Views
             hideShowPasswordCheckbox.CheckedChanged += delegate { HideShowPassword?.Invoke(this, EventArgs.Empty); };
         }
 
+        // load login view
         private void LoginView_Load(object sender, EventArgs e)
         {
 
         }
+
+
 
         // Singleton pattern (only one instance of this view/form is allowed)
         private static LoginView instance = null;    // singleton instance

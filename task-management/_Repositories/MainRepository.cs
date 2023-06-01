@@ -21,10 +21,10 @@ namespace task_management._Repositories
             this.connectionString = connectionString;
         }
 
-       
-
 
         // methods
+
+        // add task
         public void AddTask(Models.Task model)
         {
             using (var connection = new MySqlConnection(connectionString))
@@ -75,6 +75,26 @@ namespace task_management._Repositories
             }
         }
 
+
+        // delete task
+        public void DeleteTask(int id)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                var sql = @"DELETE FROM task
+                            WHERE TaskID = @id";
+
+
+                var command = new MySqlCommand(sql, connection);
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+
+                command.ExecuteNonQuery();
+
+            }
+        }
+
         // delete project
         public void DeleteProject(int id)
         {
@@ -94,18 +114,27 @@ namespace task_management._Repositories
             }
         }
 
-        public void DeleteTask(int id)
+
+        // edit task
+        public void EditTask(Models.Task model)
         {
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
-                var sql = @"DELETE FROM task
+                var sql = @"UPDATE task
+                            SET Name = @name, Description = @description, DueDate = @dueDate, Priority = @priority, Status = @status, ProjectID = @projectID
                             WHERE TaskID = @id";
 
 
                 var command = new MySqlCommand(sql, connection);
-                command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = model.Name;
+                command.Parameters.Add("@description", MySqlDbType.VarChar).Value = model.Description;
+                command.Parameters.Add("@dueDate", MySqlDbType.DateTime).Value = model.DueDate;
+                command.Parameters.Add("@priority", MySqlDbType.VarChar).Value = model.Priority;
+                command.Parameters.Add("@status", MySqlDbType.VarChar).Value = model.Status;
+                command.Parameters.Add("@projectId", MySqlDbType.Int32).Value = model.ProjectId;
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = model.Id;
 
                 command.ExecuteNonQuery();
 
@@ -135,31 +164,7 @@ namespace task_management._Repositories
             }
         }
 
-        public void EditTask(Models.Task model)
-        {
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-
-                var sql = @"UPDATE task
-                            SET Name = @name, Description = @description, DueDate = @dueDate, Priority = @priority, Status = @status, ProjectID = @projectID
-                            WHERE TaskID = @id";
-
-
-                var command = new MySqlCommand(sql, connection);
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = model.Name;
-                command.Parameters.Add("@description", MySqlDbType.VarChar).Value = model.Description;
-                command.Parameters.Add("@dueDate", MySqlDbType.DateTime).Value = model.DueDate;
-                command.Parameters.Add("@priority", MySqlDbType.VarChar).Value = model.Priority;
-                command.Parameters.Add("@status", MySqlDbType.VarChar).Value = model.Status;
-                command.Parameters.Add("@projectId", MySqlDbType.Int32).Value = model.ProjectId;
-                command.Parameters.Add("@id", MySqlDbType.Int32).Value = model.Id;
-
-                command.ExecuteNonQuery();
-
-            }
-        }
-
+        
         // get all projects
         public IEnumerable<Project> GetAllProjects()
         {
@@ -195,7 +200,8 @@ namespace task_management._Repositories
 
             return projectList;
         }
-
+        
+        // get all tasks
         public IEnumerable<Models.Task> GetAllTasks()
         {
             var taskList = new List<Models.Task>();
@@ -224,6 +230,52 @@ namespace task_management._Repositories
 
                         taskList.Add(task);
 
+                    }
+                }
+
+            }
+
+            return taskList;
+        }
+
+
+        // get task by id or name
+        public IEnumerable<Models.Task> GetByValueTask(string value)
+        {
+            var taskList = new List<Models.Task>();
+
+            int id = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            String name = value;
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                var query = @"SELECT * FROM task
+                            WHERE TaskID = @id OR Name LIKE CONCAT('%', @name, '%') 
+                            ORDER BY TaskID DESC;";
+
+
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // TODO: optimize with yield return
+                        var task = new Models.Task();
+
+                        task.Id = reader.IsDBNull(reader.GetOrdinal("TaskID")) ? -1 : reader.GetInt32("TaskID");    // redundant
+                        task.Name = reader.IsDBNull(reader.GetOrdinal("Name")) ? "null" : reader.GetString("Name");
+                        task.Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? "null" : reader.GetString("Description");
+                        task.DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? DateTime.MinValue : reader.GetDateTime("DueDate");
+                        task.Priority = reader.IsDBNull(reader.GetOrdinal("Priority")) ? "null" : reader.GetString("Priority");
+                        task.Status = reader.IsDBNull(reader.GetOrdinal("Status")) ? "null" : reader.GetString("Status");
+                        task.ProjectId = reader.IsDBNull(reader.GetOrdinal("ProjectID")) ? -1 : reader.GetInt32("ProjectID");
+
+                        taskList.Add(task);
                     }
                 }
 
@@ -275,48 +327,5 @@ namespace task_management._Repositories
             return projectList;
         }
 
-        public IEnumerable<Models.Task> GetByValueTask(string value)
-        {
-            var taskList = new List<Models.Task>();
-
-            int id = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
-            String name = value;
-
-            using (var connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-
-                var query = @"SELECT * FROM task
-                            WHERE TaskID = @id OR Name LIKE CONCAT('%', @name, '%') 
-                            ORDER BY TaskID DESC;";
-
-
-                var command = new MySqlCommand(query, connection);
-                command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
-
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        // TODO: optimize with yield return
-                        var task = new Models.Task();
-
-                        task.Id = reader.IsDBNull(reader.GetOrdinal("TaskID")) ? -1 : reader.GetInt32("TaskID");    // redundant
-                        task.Name = reader.IsDBNull(reader.GetOrdinal("Name")) ? "null" : reader.GetString("Name");
-                        task.Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? "null" : reader.GetString("Description");
-                        task.DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? DateTime.MinValue : reader.GetDateTime("DueDate");
-                        task.Priority = reader.IsDBNull(reader.GetOrdinal("Priority")) ? "null" : reader.GetString("Priority");
-                        task.Status = reader.IsDBNull(reader.GetOrdinal("Status")) ? "null" : reader.GetString("Status");
-                        task.ProjectId = reader.IsDBNull(reader.GetOrdinal("ProjectID")) ? -1 : reader.GetInt32("ProjectID");
-
-                        taskList.Add(task);
-                    }
-                }
-
-            }
-
-            return taskList;
-        }
     }
 }

@@ -28,7 +28,7 @@ namespace task_management.Views
         private bool isSuccessful;
         private bool isEdit;
 
-        private static int currentUserID;
+        private static int currentUserID;   // current user id
 
 
         // constructor
@@ -77,7 +77,6 @@ namespace task_management.Views
                 else
                 {
                     // Handle invalid DateTime format
-                    // You can display an error message or take appropriate actions here
                 }
             }
         }
@@ -158,7 +157,6 @@ namespace task_management.Views
                 else
                 {
                     // Handle invalid DateTime format
-                    // You can display an error message or take appropriate actions here
                 }
             }
         }
@@ -176,7 +174,6 @@ namespace task_management.Views
                 else
                 {
                     // Handle invalid DateTime format
-                    // You can display an error message or take appropriate actions here
                 }
             }
         }
@@ -205,20 +202,20 @@ namespace task_management.Views
 
 
         // methods
+
+        // load main (task) view
         private void MainView_Load(object sender, EventArgs e)
         {
             setUserData();  // set user data
         }
 
-
+        // associate events with event handlers
         private void AssociateAndRaiseViewEvents()
         {
-            // associate events with event handlers
 
             //
             // TASKS
-            //
-
+            
 
             // search
             searchTaskButton.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };  // raise search event
@@ -344,24 +341,26 @@ namespace task_management.Views
 
         }
 
-
+        // set task list binding source
         public void SetTaskListBindingSource(BindingSource taskList)
         {
             taskDataGridView.DataSource = taskList;
         }
 
-        // methods
-
+        
+        // set current user ID
         public static void setCurrentUserID(int id)
         {
             currentUserID = id;
         }
 
+        // get current user ID
         public static int getCurrentUserID()
         {
             return currentUserID;
         }
 
+        // initialize MaterialSkinManager
         private void InitMaterialSkinManager()
         {
 
@@ -379,16 +378,19 @@ namespace task_management.Views
 
         }
 
+        // set project list binding source
         public void SetProjectListBindingSource(BindingSource projectList)
         {
             projectDataGridView.DataSource = projectList;
         }
 
+        // dark theme switch event handler
         private void darkThemeMaterialSwitch_CheckedChanged(object sender, EventArgs e)
         {
             LoginView.getMaterialSkinManager().Theme = darkThemeMaterialSwitch.Checked ? MaterialSkin.MaterialSkinManager.Themes.DARK : MaterialSkin.MaterialSkinManager.Themes.LIGHT;
         }
 
+        // logout button click event handler
         private void logoutMaterialButton_Click(object sender, EventArgs e)
         {
 
@@ -401,31 +403,14 @@ namespace task_management.Views
             ((Form)mainView).Hide();
         }
 
-        // Singleton pattern (only one instance of this view/form is allowed)
-        private static MainView instance = null;    // singleton instance
-        public static MainView GetInstance()
-        {
-            if (instance == null || instance.IsDisposed)
-            {
-                instance = new MainView();
-            }
-            else
-            {
-                if (instance.WindowState == FormWindowState.Minimized)
-                    instance.WindowState = FormWindowState.Normal;
 
-                instance.BringToFront();
-            }
-
-            return instance;
-        }
-
+        // exit button click event handler
         private void exitMaterialButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        //
+        // set user data
         private void setUserData()
         {
             userIDMaterialTextBox.Text = currentUserID.ToString();  // set user ID
@@ -463,6 +448,27 @@ namespace task_management.Views
             }
         }
 
-        
+
+
+        // Singleton pattern (only one instance of this view/form is allowed)
+        private static MainView instance = null;    // singleton instance
+        public static MainView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new MainView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+
+                instance.BringToFront();
+            }
+
+            return instance;
+        }
+
+
     }
 }
